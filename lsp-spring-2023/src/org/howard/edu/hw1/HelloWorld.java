@@ -1,3 +1,6 @@
+/**
+ * Name:Darnell Love
+ */
 package org.howard.edu.hw1;
 
 public class HelloWorld {
