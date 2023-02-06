@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class FileReader {
 
@@ -26,5 +27,9 @@ public class FileReader {
 		}
 	}
 		throw new FileNotFoundException();
+		
 }
+	HashMap<String, Integer> newMap = new HashMap<String, Integer>();
+	
+	
 }
