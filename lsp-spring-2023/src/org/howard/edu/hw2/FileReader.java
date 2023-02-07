@@ -11,6 +11,7 @@ public class FileReader {
 	public String readToString(String resource) throws FileNotFoundException {
 		URL url = getClass().getClassLoader().getResource(resource);
 		
+		
 		if (url != null) {
 			File file= new File(url.getPath());
 			
@@ -29,7 +30,6 @@ public class FileReader {
 		throw new FileNotFoundException();
 		
 }
-	HashMap<String, Integer> newMap = new HashMap<String, Integer>();
 	
 	
 }
