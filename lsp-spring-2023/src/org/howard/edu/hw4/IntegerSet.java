@@ -31,13 +31,15 @@ public class IntegerSet {
 	public int length() {
 		return new_set.size();
 	}
-	//
+	//Return true if both sets are equal, otherwise return false
 	public boolean equals(IntegerSet set) {
-		if(new_set.size() == set.length()) {
-			return new_set.containsAll(set.new_set);
-		}else {
+		if(new_set.size() != set.length()) {
 			return false;
+		}else {
+			return new_set.containsAll(set.new_set);
 		}
+	}
+	//Returns largest item in set by setting maxVal to the lowest	
 	public int large() throws IntegerSetException {
 		int maxVal = Integer.MIN_VALUE;
 		if (new_set.isEmpty()) {
@@ -52,6 +54,7 @@ public class IntegerSet {
 		}
 	return maxVal;
 	}
+	//Returns the smallest value in the set
 	public int small() throws IntegerSetException{
 		int minVal = Integer.MAX_VALUE;
 		if(new_set.isEmpty()) {
@@ -67,38 +70,40 @@ public class IntegerSet {
 		return minVal;
 	}
 	
+	//If the set does not contain num -> add to set
 	public void add(int num) {
 		if(new_set.contains(num) == false) {
 			new_set.add(num);
 		}
 	}
-	
+	//If num is in the set -> remove it
 	public void remove(int num) {
 		if (new_set.contains(num) == true) {
 			new_set.remove(num);
 		}
 	}
-	
-	public void union(IntegerSet number) {
-		for(int x = 0; x < number.new_set.size(); x++) {
-			if(new_set.contains(number.new_set.get(x)) == false) {
-				new_set.add(number.new_set.get(x));
+	//If value is in set inSetb -> adds to inSetb
+	public void union(IntegerSet inSetb) {
+		for(int x = 0; x < inSetb.new_set.size(); x++) {
+			if(new_set.contains(inSetb.new_set.get(x)) == false) {
+				new_set.add(inSetb.new_set.get(x));
 			}
 		}
 	
 	}
-	public void intersect(IntegerSet number) {
-		new_set.retainAll(number.new_set);
+	//If value is in both new_set and inSetb -> keeps them
+	public void intersect(IntegerSet inSetb) {
+		new_set.retainAll(inSetb.new_set);
 	}
-	
-	public void different(IntegerSet number) {
-		for(int y = 0; y < number.length(); y++) {
-			if(new_set.contains(number.new_set.get(y)) == true) {
-				new_set.remove(number.new_set.get(y));
+	//If value 'y' is in both sets -> remove it
+	public void difference(IntegerSet inSetb) {
+		for(int y = 0; y < inSetb.length(); y++) {
+			if(new_set.contains(inSetb.new_set.get(y)) == true) {
+				new_set.remove(inSetb.new_set.get(y));
 			}
 		}
 	}
-	
+	//Checks to see if the set is empty
 	public boolean isEmpty() {
 		if(new_set.isEmpty() == true) {
 			return true;
@@ -107,13 +112,15 @@ public class IntegerSet {
 			return false;
 		}
 	}
-	
-	public String ToString() {
+	//Returns string representation of set
+	public String toString() {
 		String newString = "";
 		for(int s = 0; s < new_set.size(); s++) {
 			newString += new_set.get(s).toString() + ' ';
 		}
 		return newString;
 	}
+	
+	//Test Cases
 
 }
