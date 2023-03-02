@@ -91,5 +91,29 @@ public class IntegerSet {
 		new_set.retainAll(number.new_set);
 	}
 	
+	public void different(IntegerSet number) {
+		for(int y = 0; y < number.length(); y++) {
+			if(new_set.contains(number.new_set.get(y)) == true) {
+				new_set.remove(number.new_set.get(y));
+			}
+		}
+	}
+	
+	public boolean isEmpty() {
+		if(new_set.isEmpty() == true) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public String ToString() {
+		String newString = "";
+		for(int s = 0; s < new_set.size(); s++) {
+			newString += new_set.get(s).toString() + ' ';
+		}
+		return newString;
+	}
 
 }
