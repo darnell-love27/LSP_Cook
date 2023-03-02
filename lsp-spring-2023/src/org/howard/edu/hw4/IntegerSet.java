@@ -1,6 +1,16 @@
 // Name: Darnell Love
 package org.howard.edu.hw4;
+
 import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * This class is used as an integer set, which is made up of a collection of integers which provide methods and attributes for changing the set. 
+ * @author Darnell
+ *
+ */
+
 public class IntegerSet {
 	
 	private List<Integer> new_set;
@@ -40,7 +50,7 @@ public class IntegerSet {
 		}
 	}
 	//Returns largest item in set by setting maxVal to the lowest	
-	public int large() throws IntegerSetException {
+	public int largest() throws IntegerSetException {
 		int maxVal = Integer.MIN_VALUE;
 		if (new_set.isEmpty()) {
 			throw new IntegerSetException("Set is Empty");
@@ -55,7 +65,7 @@ public class IntegerSet {
 	return maxVal;
 	}
 	//Returns the smallest value in the set
-	public int small() throws IntegerSetException{
+	public int smallest() throws IntegerSetException{
 		int minVal = Integer.MAX_VALUE;
 		if(new_set.isEmpty()) {
 			throw new IntegerSetException("Set is Empty");
@@ -120,7 +130,5 @@ public class IntegerSet {
 		}
 		return newString;
 	}
-	
-	//Test Cases
 
 }
