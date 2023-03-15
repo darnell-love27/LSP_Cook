@@ -1,5 +1,5 @@
 // Name: Darnell Love
-package org.howard.edu.hw4;
+package org.howard.edu.hw5;
 
 import java.util.*;
 import java.util.ArrayList;
@@ -44,6 +44,12 @@ public class IntegerSet {
 			return new_set.containsAll(set.new_set);
 		}
 	}
+	
+	//Return true/false if set contains given value or not
+	public boolean contains(int value) {
+		return new_set.contains(value);
+	}
+	
 	//Returns largest item in set by setting maxVal to the lowest	
 	public int largest() throws IntegerSetException {
 		int maxVal = Integer.MIN_VALUE;
