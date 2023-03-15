@@ -2,8 +2,11 @@ package org.howard.edu.hw5;
 
 import org.junit.*;
 import java.util.List;
+import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.DisplayName;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class IntegerSetTest {
 	private List<Integer> new_set = new ArrayList<Integer>();
@@ -11,13 +14,13 @@ public class IntegerSetTest {
 	@Test
 	@DisplayName("Test case for clear")
 	public void testclear() {
-		// TODO Auto-generated method stub
-		
+		new_set.add(16);
+		new_set.clear();
+		assertTrue(new_set.isEmpty());
 	}
-	
 	@Test
 	@DisplayName("Test case for length")
-	public int testlength() {
+	public void testlength() {
 		new_set.add(2);
 		new_set.add(4);
 		new_set.add(6);
@@ -28,19 +31,30 @@ public class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for is equal")
-	public boolean testequals() {
+	public void testequals() {
+		List<Integer> set1 = new ArrayList<Integer>();
+		List<Integer> set2 = new ArrayList<Integer>();
 		
+		set1.add(1);
+		set1.add(2);
+		set1.add(3);
+		
+		set2.add(3);
+		set2.add(4);
+		set2.add(5);
+		
+		assertFalse(set1.equals(set2));
 	}
 	
 	@Test
 	@DisplayName("Test case for is largest")
-	public int testlargest() {
+	public void testlargest() {
 		
 	}
 	
 	@Test
 	@DisplayName("Test case for is smallest")
-	public int testsmallest() {
+	public void testsmallest() {
 		
 	}
 	
@@ -77,13 +91,13 @@ public class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test case for isEmpty")
-	public boolean testisEmpty() {
+	public void testisEmpty() {
 		
 	}
 	
 	@Test
 	@DisplayName("Test case for toString")
-	public String testtoString() {
+	public void testtoString() {
 		
 	}
 }
