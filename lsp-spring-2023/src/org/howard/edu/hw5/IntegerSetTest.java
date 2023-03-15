@@ -47,6 +47,16 @@ public class IntegerSetTest {
 	}
 	
 	@Test
+	@DisplayName("Test case for value method")
+	public void contains() {
+		new_set.add(5);
+		new_set.add(10);
+		new_set.add(15);
+		
+		assertTrue(new_set.contains(5));
+	}
+	
+	@Test
 	@DisplayName("Test case for is largest")
 	public void testlargest() {
 		
