@@ -28,7 +28,7 @@ public class IntegerSet {
 	}
 	
 	//Clears internal representation of set
-	public void of_set(List<Integer> new_set) {
+	public void clear(List<Integer> new_set) {
 		new_set.clear();
 	}
 	
@@ -87,13 +87,15 @@ public class IntegerSet {
 			new_set.add(num);
 		}
 	}
+	
 	//If num is in the set -> remove it
 	public void remove(int num) {
 		if (new_set.contains(num) == true) {
 			new_set.remove(num);
 		}
 	}
-	//If value is in set inSetb -> adds to inSetb
+	
+	//If value is not in set inSetb -> adds to inSetb
 	public void union(IntegerSet inSetb) {
 		for(int x = 0; x < inSetb.new_set.size(); x++) {
 			if(new_set.contains(inSetb.new_set.get(x)) == false) {
@@ -102,10 +104,12 @@ public class IntegerSet {
 		}
 	
 	}
+	
 	//If value is in both new_set and inSetb -> keeps them
 	public void intersect(IntegerSet inSetb) {
 		new_set.retainAll(inSetb.new_set);
 	}
+	
 	//If value 'y' is in both sets -> remove it
 	public void difference(IntegerSet inSetb) {
 		for(int y = 0; y < inSetb.length(); y++) {
@@ -114,6 +118,7 @@ public class IntegerSet {
 			}
 		}
 	}
+	
 	//Checks to see if the set is empty
 	public boolean isEmpty() {
 		if(new_set.isEmpty() == true) {
@@ -123,6 +128,7 @@ public class IntegerSet {
 			return false;
 		}
 	}
+	
 	//Returns string representation of set
 	public String toString() {
 		String newString = "";
