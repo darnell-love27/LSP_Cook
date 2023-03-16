@@ -315,6 +315,7 @@ public class IntegerSetTest {
 		diff_set.difference(set2);
 		assertEquals(1, diff_set.length());
 		
+		//Find difference with more than one element in set
 		new_set.clear();
 		set2.clear();
 		diff_set.clear();
