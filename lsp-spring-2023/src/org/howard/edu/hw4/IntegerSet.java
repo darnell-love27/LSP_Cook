@@ -28,7 +28,7 @@ public class IntegerSet {
 	}
 	
 	//Clears internal representation of set
-	public void of_set(List<Integer> new_set) {
+	public void clear() {
 		new_set.clear();
 	}
 	
@@ -84,7 +84,7 @@ public class IntegerSet {
 	//If num is in the set -> remove it
 	public void remove(int num) {
 		if (new_set.contains(num) == true) {
-			new_set.remove(num);
+			new_set.remove(Integer.valueOf(num));
 		}
 	}
 	//If value is in set inSetb -> adds to inSetb

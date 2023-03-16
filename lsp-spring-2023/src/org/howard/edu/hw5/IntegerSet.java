@@ -108,7 +108,7 @@ public class IntegerSet {
 	}
 	
 	//If value 'y' is in both sets -> remove it
-	public void difference(IntegerSet inSetb) {
+	public void diff(IntegerSet inSetb) {
 		for(int y = 0; y < inSetb.length(); y++) {
 			if(new_set.contains(inSetb.new_set.get(y)) == true) {
 				new_set.remove(inSetb.new_set.get(y));

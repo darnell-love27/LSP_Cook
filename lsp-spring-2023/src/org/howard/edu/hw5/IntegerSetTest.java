@@ -312,7 +312,7 @@ public class IntegerSetTest {
 		
 		IntegerSet diff_set = new IntegerSet();
 		diff_set = new_set;
-		diff_set.difference(set2);
+		diff_set.diff(set2);
 		assertEquals(1, diff_set.length());
 		
 		//Find difference with more than one element in set
@@ -330,7 +330,7 @@ public class IntegerSetTest {
 		set2.add(8);
 		
 		diff_set = new_set;
-		diff_set.difference(set2);
+		diff_set.diff(set2);
 		assertTrue(diff_set.contains(2));
 		assertTrue(diff_set.contains(4));
 		assertEquals(2, diff_set.length());

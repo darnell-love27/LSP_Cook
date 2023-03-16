@@ -15,6 +15,7 @@ public class Driver {
 
 	public static void main(String[] args) throws org.howard.edu.hw5.IntegerSet.IntegerSetException {
 		IntegerSet new_set = new IntegerSet();
+		
 		//Tests adding elements to set
 		IntegerSet set2 = new IntegerSet();
 		new_set.add(-1);
@@ -42,8 +43,9 @@ public class Driver {
 		IntegerSet intersect_set = new IntegerSet();
 		intersect_set = new_set;
 		intersect_set.intersect(set2);
-		
 		System.out.println(intersect_set.toString());
+		
+		System.out.println("New_set contains the number -1: " + new_set.contains(-2));
 		
 		
 		
