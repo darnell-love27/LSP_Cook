@@ -24,6 +24,19 @@ public class SongsDatabase {
 			song_map.put(genre, new_song);
 			
 		}
+		//Add the song title 
+		new_song.add(songTitle);
 	}
-
+	
+	public Set<String> getSongs(String genre) {
+		//Songs in HashSet
+		HashSet<String> current_song = song_map.get(genre);
+		if (current_song == null) {
+			//Return empty HashSet if songs not a part of genre
+			return new HashSet<>();
+		}
+		//Otherwise return HashSet 
+		return current_song;
+	}
 }
+
