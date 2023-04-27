@@ -42,6 +42,7 @@ public class Word_Counter {
 				for (String word : NewMap.keySet()) {
 					System.out.println(word + " " + NewMap.get(word));
 				}
+				
 		} catch (FileNotFoundException e) {
 				System.out.println("Unable to open resource");
 				
