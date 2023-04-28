@@ -45,5 +45,24 @@ public class SongDatabaseTest {
 		assertFalse(hipsongs.contains("Good Days"));
 		
 	}
+	
+	@Test
+	@DisplayName("Test to get songs")
+	public void testGetSongs() {
+		song_base = new SongsDatabase();
+		//Test 1:Get 2 songs in genre
+		song_base.addSong("Hip Hop", "OPP");
+		song_base.addSong("Hip Hop", "Slow Down");
+		Set<String> hipsongs = song_base.getSongs("Hip Hop");
+		assertEquals(2, hipsongs.size());
+		assertTrue(hipsongs.contains("OPP"));
+		
+		//Test 2:Get 2 songs in 2 genre
+		song_base.addSong("Pop", "Watermelon Sugar");
+		song_base.addSong("Pop", "Dynamite");
+		Set<String> popsongs = song_base.getSongs("Pop");
+		assertTrue(popsongs.contains("Watermelon Sugar"));
+		assertFalse(popsongs.contains("Slow Down"));
+	}
 
 }
