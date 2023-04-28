@@ -60,9 +60,35 @@ public class SongDatabaseTest {
 		//Test 2:Get 2 songs in 2 genre
 		song_base.addSong("Pop", "Watermelon Sugar");
 		song_base.addSong("Pop", "Dynamite");
+		song_base.addSong("HipHop", "Ice Ice Baby");
+		song_base.addSong("HipHop", "The Message");
 		Set<String> popsongs = song_base.getSongs("Pop");
+		Set<String> hipsongs2 = song_base.getSongs("HipHop");
+		assertTrue(popsongs.contains("Dynamite"));
+		assertTrue(hipsongs2.contains("Ice Ice Baby"));
 		assertTrue(popsongs.contains("Watermelon Sugar"));
-		assertFalse(popsongs.contains("Slow Down"));
+		assertTrue(hipsongs2.contains("The Message"));
+	}
+	
+	@Test
+	@DisplayName("Test to get genre of song")
+	public void testGetGenreOfSong(){
+		song_base = new SongsDatabase();
+		
+		//Test 1: Check for no items
+		assertEquals(null, song_base.getGenreOfSong("Rock"));
+		
+		//Test2:
+		song_base.addSong("Classical", "Clair de lune");
+		song_base.addSong("Hip Hop", "Lose Yourself");
+		song_base.addSong("Blues", "Crazy Blues");
+		String new_genre = song_base.getGenreOfSong("Crazy Blues");
+		assertEquals("Blues", new_genre);
+		new_genre = song_base.getGenreOfSong("Clair de lune");
+		assertEquals("Classical", new_genre);
+		new_genre = song_base.getGenreOfSong("Lose Yourself");
+		assertEquals("Hip Hop", new_genre);
+		
 	}
 
 }
